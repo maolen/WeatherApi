@@ -1,0 +1,23 @@
+﻿<Window x:Class="WeatherApi.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WeatherApi"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Обновить" HorizontalAlignment="Left" Margin="665,246,0,0" VerticalAlignment="Top" Height="23" Width="85" Click="ShowWeather"/>
+        <TextBox Name="userLocation" HorizontalAlignment="Left" Margin="649,199,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Ввести город" HorizontalAlignment="Left" Margin="649,168,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.156,0.406" Width="120"/>
+        <DataGrid Name="dataGrid" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,0,202,39">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding dt_txt}" Header="Дата" Width="110"/>
+                <DataGridTextColumn Binding="{Binding temp}" Header="Температура" Width="100"/>
+                <DataGridTextColumn Binding="{Binding description}" Header="Описание" Width="500"/>
+            </DataGrid.Columns>
+        </DataGrid>
+            
+
+    </Grid>
+</Window>
