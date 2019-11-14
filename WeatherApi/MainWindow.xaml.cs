@@ -36,9 +36,8 @@ namespace WeatherApi
 
         private void ShowWeather(object sender, RoutedEventArgs e)
         {
-            var webUrl = $"http://api.openweathermap.org/data/2.5/forecast?q=Astana,KZ&units=metric&appid=68ded4b45811be921bd9f9dc6b94bcc5";
-            var json = client.DownloadString(new Uri(webUrl));
-            var result = JsonConvert.DeserializeObject<Rootobject>(json); 
+            var service = new WeatherApiService(userLocation.Text);
+            var result = service.GetWeatherData();
         }
     }
 }
